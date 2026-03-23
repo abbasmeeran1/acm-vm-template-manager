@@ -1,0 +1,23 @@
+policy:
+  name: vm-template-policy
+  namespace: open-cluster-management
+
+defaults:
+  network: default-network
+  data_source: base-image
+  data_source_ns: openshift-virtualization-os-images
+  dns1: 8.8.8.8
+  dns2: 8.8.4.4
+  domain: example.local
+  cloud_user: cloud-user
+
+templates:
+  - name: small-linux-template
+    cpu_cores: 2
+    cpu_sockets: 1
+    memory: 4Gi
+    disk_size: 30Gi
+    flavor: small
+    hostname: vm-example
+    access_mode: ReadWriteOnce
+    storage_class: standard
